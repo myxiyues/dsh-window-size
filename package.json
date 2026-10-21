@@ -1,0 +1,35 @@
+{
+  "name": "dsh-window-size",
+  "version": "0.1.0",
+  "description": "窗口尺寸：在「设置」里保存 DSH 客户端主窗口的宽高/位置，保存即生效，客户端每次启动自动恢复。不注册工具、不在主界面加入口、不起后台进程、不写计划任务。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "window"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}

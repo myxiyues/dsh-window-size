@@ -1,0 +1,4 @@
+# dsh-window-size 的 bundle patch：把插件插进 profile 的 loader 配置。
+- insert:
+    - id: window-size
+      name: dsh-window-size
